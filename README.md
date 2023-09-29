@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Mediatekformation
 ## Présentation
 Ce site, développé avec Symfony 5.4, permet d'accéder aux vidéos d'auto-formation proposées par une chaîne de médiathèques et qui sont aussi accessibles sur YouTube.<br> 
@@ -83,3 +84,6 @@ Le chemin des images (des 2 tailles) n'est pas mémorisé dans la BDD car il peu
 - Ouvrir une fenêtre de commandes en mode admin, se positionner dans le dossier du projet et taper "composer install" pour reconstituer le dossier vendor.<br>
 - Récupérer le fichier mediatekformation.sql en racine du projet et l'utiliser pour créer la BDD MySQL "mediatekformation" en root sans pwd (si vous voulez mettre un login/pwd d'accès, il faut le préciser dans le fichier ".env" en racine du projet).<br>
 - De préférence, ouvrir l'application dans un IDE professionnel. L'adresse pour la lancer est : http://localhost/mediatekformation/public/index.php<br>
+=======
+# MediaTek86
+>>>>>>> 29725c25e1c850c032de6d4da87d157d2c0ebe68
