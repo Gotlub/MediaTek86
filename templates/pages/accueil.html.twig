@@ -13,17 +13,17 @@
     </p>
     <p>
         Voici les <strong>deux dernières formations</strong> ajoutées au catalogue :
-        <table class="table">
-            <tr>
+        <div class="container">
+            <div class="row">
                 {% for formation in formations %}
-                    <td>
+                    <div class="col">
                         <div class="row">
                             <div class="col">
                                 <!-- emplacement photo -->
                                 {% if formation.picture %}
                                     <a href="{{ path('formations.showone', {id:formation.id}) }}">
                                     <img src="{{ formation.picture }}" 
-                                         class="card-img-top" style="width:100%;height:auto;">
+                                         class="card-img-top" style="width:100%;height:auto;" alt="image de la formation">
                                     </a>    
                                 {% endif %}
                             </div>
@@ -37,12 +37,12 @@
                                 {% for categorie in formation.categories %}
                                     {{ categorie.name }}&nbsp;
                                 {% endfor %}
-                            </div>    
-                        </div>                    
-                {% endfor %}    
-            </tr>
-
-        </table>        
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     </p>
 {% endblock %}
 
