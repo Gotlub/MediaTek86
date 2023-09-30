@@ -89,7 +89,6 @@ class PlaylistRepository extends ServiceEntityRepository
 
     /**
      * Retourne toutes les playlists triées sur la quantité de formation
-     * @param type $champ
      * @param type $ordre
      * @return Playlist[]
      */
