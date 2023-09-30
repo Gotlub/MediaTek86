@@ -10,6 +10,11 @@
             {{ message }}
         </div>
     {% endfor %}
+    <p class="text-end">
+        <a href="{{ path('admin.formation.ajout') }}" class="btn btn-secondary">
+            Ajouter une formation
+        </a>
+    </p>
     <table class="table table-striped">
         <caption>tableau des formations</caption>
         <thead>

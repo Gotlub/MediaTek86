@@ -91,7 +91,7 @@ class AdminFormationController extends AbstractController
         $this->formationRepository->remove($formation, true);
         $this->addFlash(
             'alert',
-            'Suppresion de la formation' . $formation->getTitle() . 'prise en compte');
+            'Suppresion de la formation ' . $formation->getTitle() . ' prise en compte');
         return $this->redirectToRoute('admin.formations');
     }
 
@@ -109,7 +109,7 @@ class AdminFormationController extends AbstractController
             $this->formationRepository->add($formation, true);
             $this->addFlash(
                 'success',
-                'Modification de la formation' . $formation->getTitle() . 'prise en compte');
+                'Modification de la formation ' . $formation->getTitle() . ' prise en compte');
             return $this->redirectToRoute('admin.formations');
         }
 
@@ -119,4 +119,27 @@ class AdminFormationController extends AbstractController
         ]);
     }
     
+    /**
+     * @Route("/admin/formation/ajout", name="admin.formation.ajout")
+     * @param Request $request
+     * @return Response
+     */
+    public function ajout(Request $request): Response{
+        $formation = new Formation();
+        $formFormation = $this->createForm(FormationType::class, $formation);
+
+        $formFormation->handleRequest($request);
+        if($formFormation->isSubmitted() && $formFormation->isValid()){
+            $this->formationRepository->add($formation, true);
+            $this->addFlash(
+                'success',
+                'Ajout de la formation ' . $formation->getTitle() . ' prise en compte');
+            return $this->redirectToRoute('admin.formations');
+        }     
+
+        return $this->render(self::PAGE_FORMATION, [
+            'formation' => $formation,
+            'formFormation' => $formFormation->createView()
+        ]);
+    }
 }
