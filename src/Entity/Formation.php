@@ -60,6 +60,11 @@ class Formation
         $this->categories = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->title . (($this->playlist == null) ? "" :  " Playlist : ") .$this->playlist;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
