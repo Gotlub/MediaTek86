@@ -18,8 +18,6 @@ class AdminPlaylistsController extends AbstractController
 
     const PAGE_PLAYLIST = "pages/admin/playlist.html.twig";
 
-    const STRING_PRISE = " prise en compte";
-
     /**
      *
      * @var PlaylistRepository
@@ -116,7 +114,7 @@ class AdminPlaylistsController extends AbstractController
         $this->playlistRepository->remove($playlist, true);
         $this->addFlash(
             'alert',
-            'Suppresion de la playlist ' . $playlist->getName() . STRING_PRISE
+            'Suppresion de la playlist ' . $playlist->getName() . " prise en compte"
         );
         return $this->redirectToRoute('admin.playlists');
     }
@@ -149,7 +147,7 @@ class AdminPlaylistsController extends AbstractController
             $this->playlistRepository->add($playlist, true);
             $this->addFlash(
                 'success',
-                'Modification de la playlist ' . $playlist->getName() . STRING_PRISE
+                'Modification de la playlist ' . $playlist->getName() . " prise en compte"
             );
             return $this->redirectToRoute('admin.playlists');
         }
@@ -180,7 +178,7 @@ class AdminPlaylistsController extends AbstractController
             }
             $this->addFlash(
                 'success',
-                'Ajout de la playlist ' . $playlist->getName() . STRING_PRISE
+                'Ajout de la playlist ' . $playlist->getName() . " prise en compte"
             );
             return $this->redirectToRoute('admin.playlists');
         }

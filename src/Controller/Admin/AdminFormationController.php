@@ -17,8 +17,6 @@ class AdminFormationController extends AbstractController
 
     const PAGE_FORMATION = "pages/admin/formation.html.twig";
 
-    const STRING_PRISE = " prise en compte";
-
     /**
      *
      * @var FormationRepository
@@ -93,7 +91,7 @@ class AdminFormationController extends AbstractController
         $this->formationRepository->remove($formation, true);
         $this->addFlash(
             'alert',
-            'Suppresion de la formation ' . $formation->getTitle() . STRING_PRISE);
+            'Suppresion de la formation ' . $formation->getTitle() . ' prise en compte');
         return $this->redirectToRoute('admin.formations');
     }
 
@@ -111,7 +109,7 @@ class AdminFormationController extends AbstractController
             $this->formationRepository->add($formation, true);
             $this->addFlash(
                 'success',
-                'Modification de la formation ' . $formation->getTitle() . STRING_PRISE);
+                'Modification de la formation ' . $formation->getTitle() . ' prise en compte');
             return $this->redirectToRoute('admin.formations');
         }
 
@@ -135,7 +133,7 @@ class AdminFormationController extends AbstractController
             $this->formationRepository->add($formation, true);
             $this->addFlash(
                 'success',
-                'Ajout de la formation ' . $formation->getTitle() . STRING_PRISE);
+                'Ajout de la formation ' . $formation->getTitle() . ' prise en compte');
             return $this->redirectToRoute('admin.formations');
         }
 
