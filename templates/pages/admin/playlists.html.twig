@@ -30,7 +30,7 @@
                             <input type="hidden" name="_token" value="{{ csrf_token('filtre_name') }}">
                             <button type="submit" class="btn btn-warning mb-2 btn-sm">filtrer</button>
                         </div>
-                    </form>                    
+                    </form>
                 </th>
                 <th class="text-left align-top" scope="col">
                     catégories
@@ -45,8 +45,8 @@
                                     value="{{ categorie.id }}">{{ categorie.name }}
                                 </option>
                             {% endfor %}
-                        </select>                    
-                    </form>            
+                        </select>
+                    </form>
                 </th>
                 <th class="text-center align-top" scope="col">
                     formations par playlist<br />
@@ -58,7 +58,7 @@
                 </th>
                 <th class="text-center align-top" scope="col">
                     &nbsp;
-                </th>				
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -83,7 +83,7 @@
                             <h5 class="text-center">
                                 {{ playlists[k].formations|length}} {{ (playlists[k].formations|length) > 1 ? 'formations' : 'formation' }}
                             </h5>
-                        </td>            					
+                        </td>
                         <td>
                             <a href="{{ path('admin.playlist.edit', {id:playlists[k].id }) }}" class="btn btn-warning">
                                 Modifier
@@ -95,7 +95,7 @@
                             onclick="return confirm('Etes-vous sûr de vouloir supprimer {{ playlists[k].name }} ?')">
                                 Supprimer
                             </a>
-                        </td> 					
+                        </td>
                     </tr>
                 {% endfor %}	
             {% endif %}

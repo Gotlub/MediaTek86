@@ -7,9 +7,12 @@ use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=FormationRepository::class)
+ * @UniqueEntity(fields={"title"}, message="Ce nom est déjà utilisé !")
  */
 class Formation
 {
@@ -31,7 +34,8 @@ class Formation
     private $publishedAt;
 
     /**
-     * @ORM\Column(type="string", length=100, nullable=true)
+     * @ORM\Column(type="string", length=100, nullable=true, unique=true)
+     * @Assert\NotBlank()
      */
     private $title;
 
@@ -51,7 +55,7 @@ class Formation
     private $playlist;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Categorie::class, inversedBy="formations")
+     * @ORM\ManyToMany(targetEntity=Categorie::class, inversedBy="formations" )
      */
     private $categories;
 

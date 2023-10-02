@@ -130,16 +130,16 @@ class AdminPlaylistsController extends AbstractController
         $formationsIni = $playlist->getFormations()->toArray();
         $formPlaylist = $this->createForm(PlaylistType::class, $playlist);
         $formPlaylist->handleRequest($request);
-        if ($formPlaylist->isSubmitted() && $formPlaylist->isValid()) {
+        if ($formPlaylist->isSubmitted() && $formPlaylist->isValid()){
             $formations = $playlist->getFormations()->toArray();
             foreach($formations as $formation) {
-                if(!in_array($formation, $formationsIni)) {
+                if(!in_array($formation, $formationsIni)){
                     $formation->setPlaylist($playlist);
                     $this->formationRepository->add($formation, true);
                 }
             }
-            foreach($formationsIni as $formation) {
-                if(!in_array($formation, $formations)) {
+            foreach($formationsIni as $formation){
+                if(!in_array($formation, $formations)){
                     $formation->setPlaylist(null);
                     $this->formationRepository->add($formation , true);
                 }
@@ -169,7 +169,7 @@ class AdminPlaylistsController extends AbstractController
         $formPlaylist = $this->createForm(PlaylistType::class, $playlist);
 
         $formPlaylist->handleRequest($request);
-        if ($formPlaylist->isSubmitted() && $formPlaylist->isValid()) {
+        if ($formPlaylist->isSubmitted() && $formPlaylist->isValid()){
             $this->playlistRepository->add($playlist, true);
             $formations = $playlist->getFormations()->toArray();
             foreach($formations as $formation) {

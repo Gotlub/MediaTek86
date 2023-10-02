@@ -15,7 +15,7 @@
                             <input type="hidden" name="_token" value="{{ csrf_token('filtre_title') }}">
                             <button type="submit" class="btn btn-info mb-2 btn-sm">filtrer</button>
                         </div>
-                    </form>                    
+                    </form>
                 </th>
                 <th class="text-left align-top" scope="col">
                     playlist<br />
@@ -43,8 +43,8 @@
                                     value="{{ categorie.id }}">{{ categorie.name }}
                                 </option>
                             {% endfor %}
-                        </select>                    
-                    </form>            
+                        </select>
+                    </form>
                 </th>
                 <th class="text-center align-top" scope="col">
                     date<br />
@@ -65,13 +65,13 @@
                         </h5>
                     </td>
                     <td class="text-left">
-                        {{ formation.playlist.name }}                  
-                    </td>                    
+                        {{ formation.playlist }}
+                    </td>
                     <td class="text-left">
                         {% for categorie in formation.categories %}
                             {{ categorie.name }}<br />
                         {% endfor %}
-                    </td>                    
+                    </td>
                     <td class="text-center">
                         {{ formation.publishedatstring }}
                     </td>

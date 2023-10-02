@@ -14,13 +14,13 @@
                     allowfullscreen
                     title="YouTube video player"
                   >
-                </div>                                             
+                </div>
             {% endif %}
         </div>
         <div class="col">
             {{ formation.publishedatstring }}
             <h4 class="text-info mt-5">{{ formation.title }}</h4>
-            <strong>playlist : </strong>{{ formation.playlist.name }}<br />
+            <strong>playlist : </strong>{{ formation.playlist }}<br />
             <strong>catégories : </strong>
                 {% for categorie in formation.categories %}
                     {{ categorie.name }}&nbsp;

@@ -60,8 +60,8 @@
                                     value="{{ categorie.id }}">{{ categorie.name }}
                                 </option>
                             {% endfor %}
-                        </select>                    
-                    </form>            
+                        </select>    
+                    </form>
                 </th>
                 <th class="text-center align-top" scope="col">
                     date<br />
@@ -95,13 +95,13 @@
                     </td>
 
                     <td class="text-left">
-                        {{ formation.playlist }}                
-                    </td>                    
+                        {{ formation.playlist }}
+                    </td>
                     <td class="text-left">
                         {% for categorie in formation.categories %}
                             {{ categorie.name }}<br />
                         {% endfor %}
-                    </td>                    
+                    </td>
                     <td class="text-center">
                         {{ formation.publishedatstring }}
                     </td>

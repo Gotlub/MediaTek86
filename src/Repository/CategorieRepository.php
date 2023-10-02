@@ -55,4 +55,87 @@ class CategorieRepository extends ServiceEntityRepository
                 ->getResult();
     }
 
+    /**
+     * Retourne toutes les categories triées sur le nom de la categories
+     * @param type $ordre
+     * @return Categorie[]
+     */
+    public function findAllOrderByName($ordre): array{
+        return $this->createQueryBuilder('c')
+                ->leftjoin('c.formations', 'f')
+                ->groupBy('f.id')
+                ->orderBy('c.name', $ordre)
+                ->getQuery()
+                ->getResult();
+    }
+
+    /**
+     * Enregistrements dont un champ contient une valeur
+     * ou tous les enregistrements si la valeur est vide
+     * @param type $champ
+     * @param type $valeur
+     * @return Categorie[]
+     */
+    public function findByContainValue($champ, $valeur): array{
+        if($valeur==""){
+            return $this->findAllOrderByName('ASC');
+        }
+        return $this->createQueryBuilder('c')
+                ->where('c.'.$champ.' LIKE :valeur')
+                ->orderBy('c.name', 'DESC')
+                ->setParameter('valeur', '%'.$valeur.'%')
+                ->getQuery()
+                ->getResult();
+    }
+
+    /**
+     * Retourne toutes les categories triées sur la quantité de formation
+     * @param type $ordre
+     * @return Categorie[]
+     */
+    public function findAllOrderByAmount($ordre): array{
+        return $this->createQueryBuilder('c')
+                ->leftjoin('c.formations', 'f')
+                ->groupBy('c.id')
+                ->orderBy('count(f.id)', $ordre)
+                ->getQuery()
+                ->getResult();
+    }
+
+    /**
+     * Ajoute la formation à la catégorie
+     *
+     * @param type $id_formation
+     * @param type $id_categorie
+     * @return void
+     */
+    public function addFormatioCategorie($id_formation, $id_categorie): void{
+        $query = "INSERT INTO formation_categorie (formation_id, categorie_id)
+         VALUE ($id_formation, $id_categorie);";
+        try {
+            $conn = $this->getEntityManager()->getConnection();
+            $conn->executeQuery($query);
+        } catch(\Exception $e){
+            dd( $e);
+        }
+    }
+
+    /**
+     * Supprime la formation de la catégorie
+     *
+     * @param [type] $id_formation
+     * @param [type] $id_categorie
+     * @return void
+     */
+    public function delFormatioCategorie($id_formation, $id_categorie): void{
+        $query = "DELETE FROM  formation_categorie
+         WHERE formation_id = $id_formation and categorie_id = $id_categorie;";
+        try {
+            $conn = $this->getEntityManager()->getConnection();
+            $conn->executeQuery($query);
+        } catch(\Exception $e){
+            dd( $e);
+        }
+    }
+
 }

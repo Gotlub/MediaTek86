@@ -6,9 +6,12 @@ use App\Repository\PlaylistRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=PlaylistRepository::class)
+ * @UniqueEntity(fields={"name"}, message="Ce nom est déjà utilisé !")
  */
 class Playlist
 {
@@ -20,7 +23,8 @@ class Playlist
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=100, nullable=true)
+     * @ORM\Column(type="string", length=100, nullable=true, unique=true)
+     * @Assert\NotBlank()
      */
     private $name;
 

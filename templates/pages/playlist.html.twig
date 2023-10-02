@@ -22,13 +22,13 @@
                             <a href="{{ path('formations.showone', {id:formation.id}) }}">
                                 <img src="{{ formation.miniature }}" alt="image de la formation">
                             </a>
-                        {% endif %}  
+                        {% endif %}
                     </div>
                     <div class="col d-flex align-items-center">
                         <a href="{{ path('formations.showone', {id:formation.id}) }}" 
                            class="link-secondary text-decoration-none">
                             {{ formation.title }}
-                        </a>          
+                        </a>
                     </div>
                 </div>
             {% endfor %}

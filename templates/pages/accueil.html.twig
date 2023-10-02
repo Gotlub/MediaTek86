@@ -24,7 +24,7 @@
                                     <a href="{{ path('formations.showone', {id:formation.id}) }}">
                                     <img src="{{ formation.picture }}" 
                                          class="card-img-top" style="width:100%;height:auto;" alt="image de la formation">
-                                    </a>    
+                                    </a>
                                 {% endif %}
                             </div>
                             <div class="col">
@@ -32,7 +32,7 @@
                                 <h5 class="text-info mt-1">
                                     {{ formation.title }}
                                 </h5>
-                                <strong>playlist : </strong>{{ formation.playlist.name }}<br />
+                                <strong>playlist : </strong>{{ formation.playlist }}<br />
                                 <strong>catégories : </strong> 
                                 {% for categorie in formation.categories %}
                                     {{ categorie.name }}&nbsp;
