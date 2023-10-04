@@ -109,7 +109,7 @@ class CategorieRepository extends ServiceEntityRepository
      * @param type $id_categorie
      * @return void
      */
-    public function addFormatioCategorie($id_formation, $id_categorie): void{
+    public function addFormationCategorie($id_formation, $id_categorie): void{
         $query = "INSERT INTO formation_categorie (formation_id, categorie_id)
          VALUE ($id_formation, $id_categorie);";
         try {
@@ -127,7 +127,7 @@ class CategorieRepository extends ServiceEntityRepository
      * @param [type] $id_categorie
      * @return void
      */
-    public function delFormatioCategorie($id_formation, $id_categorie): void{
+    public function delFormationCategorie($id_formation, $id_categorie): void{
         $query = "DELETE FROM  formation_categorie
          WHERE formation_id = $id_formation and categorie_id = $id_categorie;";
         try {

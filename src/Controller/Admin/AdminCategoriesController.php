@@ -114,12 +114,12 @@ class AdminCategoriesController extends AbstractController
             $formations = $categorie->getFormations()->toArray();
             foreach($formations as $formation){
                 if(!in_array($formation, $formationsIni)){
-                    $this->categorieRepository->addFormatioCategorie($formation->getId(), $categorie->getId());
+                    $this->categorieRepository->addFormationCategorie($formation->getId(), $categorie->getId());
                 }
             }
             foreach($formationsIni as $formation){
                 if(!in_array($formation, $formations)){
-                    $this->categorieRepository->delFormatioCategorie($formation->getId(), $categorie->getId());
+                    $this->categorieRepository->delFormationCategorie($formation->getId(), $categorie->getId());
                 }
             }
             $this->addFlash(
@@ -150,7 +150,7 @@ class AdminCategoriesController extends AbstractController
             $this->categorieRepository->add($categorie, true);
             $formations = $categorie->getFormations()->toArray();
             foreach($formations as $formation) {
-                $this->categorieRepository->addFormatioCategorie($formation->getId(), $categorie->getId());
+                $this->categorieRepository->addFormationCategorie($formation->getId(), $categorie->getId());
             }
             $this->addFlash(
                 'success',

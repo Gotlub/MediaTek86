@@ -2,5 +2,5 @@ projectKey=mediatekformation
 serverUrl=http://localhost:9000
 serverVersion=10.2.1.78527
 dashboardUrl=http://localhost:9000/dashboard?id=mediatekformation
-ceTaskId=AYryMUNmcce1Pm1wblik
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AYryMUNmcce1Pm1wblik
+ceTaskId=AYr7UQus8KA7Qq3Nh-Uz
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYr7UQus8KA7Qq3Nh-Uz
