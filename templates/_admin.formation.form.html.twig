@@ -1,0 +1,35 @@
+    {{ form_start(formFormation) }}
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col-auto">
+                        {{ form_row(formFormation.publishedAt) }}
+                    </div>
+                    <div class="col">
+                        {{ form_row(formFormation.title) }}
+                    </div>
+                    <div class="col">
+                        {{ form_row(formFormation.videoId) }}
+                    </div>
+                </div>
+                <br>
+                {{ form_row(formFormation.description) }}
+                <br>
+                {{ form_row(formFormation.playlist, {'attr': {'size': 15}}) }}
+                <br>
+                {{ form_row(formFormation.categories) }} 
+            </div>
+        </div>
+    {{ form_end(formFormation) }}
+    {% if formation.id != null %}
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a href="{{ path('admin.formation.edit', {id:formation.id }) }}" class="btn btn-warning me-md-2">
+                Annuler
+            </a>
+            <a href="{{ path('admin.formation.suppr', {id:formation.id }) }}" 
+                class="btn btn-danger" 
+                onclick="return confirm('Etes-vous sûr de vouloir supprimer {{ formation.title }} ?')">
+                Supprimer
+            </a>
+        </div>
+    {% endif %}
