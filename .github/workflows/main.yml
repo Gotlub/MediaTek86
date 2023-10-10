@@ -1,17 +1,22 @@
-on: push
-name: Deploy website on push
+name: Continuous Deploy 
+on: [push] 
+
 jobs:
-  web-deploy:
-    name: Deploy
-    run-on: debian-11
+  deploy_job:
+    runs-on: Debian-latest  
+    name: sftp
     steps:
-    - name: Get latest code
-      uses: actions/checkout@v2
-      
-    - name: Sync files
-    uses: SamKirkland/FTP-Deploy-Action@4.3.0
-    with:
-      server: ftp://85.215.34.117
-      server-dir: /var/www/html/MediaTek86
-      username: testowyftp
-      password: ${{ secrets.ftp_password }}
+      - name: Checkout    
+        uses: actions/checkout@v2 
+
+      - name: deploy file to server
+        uses:  ./ # Uses an action in the root directory
+        with:  
+          username: 'testowyftp'  
+          server: 85.215.34.117
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          local_path: '/var/www/html/MediaTek86' 
+          remote_path: '/Users/wl/Downloads/t/a'
+          sftpArgs: '-o ConnectTimeout=5'
+          # sftp_only: true
+          password: ${{secrets.FTP_PASSWORD}}
