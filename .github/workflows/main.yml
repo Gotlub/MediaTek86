@@ -3,7 +3,7 @@ on: [push]
 
 jobs:
   deploy_job:
-    runs-on: Debian-latest  
+    runs-on: Debian
     name: sftp
     steps:
       - name: Checkout    
