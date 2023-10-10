@@ -3,7 +3,7 @@ name: Deploy website on push
 jobs:
   web-deploy:
     name: Deploy
-    runs-on: debian-11
+    run-on: debian-11
     steps:
     - name: Get latest code
       uses: actions/checkout@v2
@@ -11,7 +11,7 @@ jobs:
     - name: Sync files
     uses: SamKirkland/FTP-Deploy-Action@4.3.0
     with:
-      server: sftp://85.215.34.117
+      server: ftp://85.215.34.117
       server-dir: /var/www/html/MediaTek86
       username: testowyftp
       password: ${{ secrets.ftp_password }}
