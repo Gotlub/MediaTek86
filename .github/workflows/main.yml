@@ -11,7 +11,7 @@ jobs:
         uses: wangyucode/sftp-upload-action@v2.0.2
         with:
           host: 85.215.34.117                 # Recommended to put the credentials in github secrets.
-          username: testowyftp
+          username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           compress: true                             # Compression
           forceUpload: true                          # Optional, Force uploading all files, Default to false(upload only newer files).
