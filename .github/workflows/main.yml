@@ -15,6 +15,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           compress: true                             # Compression
           forceUpload: true                          # Optional, Force uploading all files, Default to false(upload only newer files).
-          localDir: '/var/www/html/MediaTek86/'                              # Required, Absolute or relative to cwd.
-          remoteDir: '/'                          
+          localDir: '.'                              # Required, Absolute or relative to cwd.
+          remoteDir: '/var/www/html/MediaTek86/'                          
 
