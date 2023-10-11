@@ -1,7 +1,7 @@
 on: [push]
-
+name: Deploy website on push
 jobs:
-  Upload-to-SFTP:
+  web-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code                     # Checkout the latest code
