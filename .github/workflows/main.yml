@@ -12,7 +12,10 @@ jobs:
     uses: SamKirkland/FTP-Deploy-Action@v4.3.4
     with:
       server: 85.215.34.117
-      protocol: ftps
+      
       server-dir: /var/www/html/MediaTek86/
       username: ${{ secrets.FTP_USER }}
       password: ${{ secrets.FTP_PASSWORD }}
+      protocol: ftps
+      port: 22
+      
