@@ -13,7 +13,6 @@ jobs:
           host: 85.215.34.117                 # Recommended to put the credentials in github secrets.
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          forceUpload: true 
+          # forceUpload: true 
           localDir: '.'                              # Required, Absolute or relative to cwd.
           remoteDir: '/var/www/html/MediaTek86/'
-      
