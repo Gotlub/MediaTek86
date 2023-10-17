@@ -16,5 +16,5 @@ jobs:
           forceUpload: true 
           localDir: '.'                              # Required, Absolute or relative to cwd.
           remoteDir: '/var/www/html/MediaTek86/'
-          exclude: '.git*, /vendor/, /var/, /.env, /.env.local, /.env.local.php, /.phpdoc/, /phpunit.xml, .phpunit.result.cache, /config/secrets/prod/prod.decrypt.private.php, /public/bundles/'
+          exclude: '.git*, /vendor/, /var/, /.env, /.env.local, /.env.local.php, /.phpdoc/, /phpunit.xml, .phpunit.result.cache, /config/secrets/prod/prod.decrypt.private.php, /public/bundles/'  
 
