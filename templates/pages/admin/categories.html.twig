@@ -1,0 +1,81 @@
+{% extends "baseadmin.html.twig" %}
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success mt-4">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('alert') %}
+        <div class="alert alert-warning mt-4">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <p class="text-end">
+        <a href="{{ path('admin.categorie.ajout') }}" class="btn btn-secondary">
+            Ajouter une categorie
+        </a>
+    </p>
+    <table class="table table-striped">
+        <caption>tableau des categories</caption>
+        <thead>
+            <tr>
+                <th class="text-left align-top" scope="col">
+                    categorie<br />
+                    <a href="{{ path('admin.categories.sort', {champ:'name', ordre:'ASC'}) }}" class="btn btn-warning btn-sm active" role="button" aria-pressed="true"><</a>
+                    <a href="{{ path('admin.categories.sort', {champ:'name', ordre:'DESC'}) }}" class="btn btn-warning btn-sm active" role="button" aria-pressed="true">></a>
+                    <form class="form-inline mt-1" method="POST" action="{{ path('admin.categories.findallcontain', {champ:'name'}) }}">
+                        <div class="form-group mr-1 mb-2">
+                            <input type="text" class="sm" name="recherche" 
+                                   value="{% if valeur|default and not table|default %}{{ valeur }}{% endif %}">
+                            <input type="hidden" name="_token" value="{{ csrf_token('filtre_name') }}">
+                            <button type="submit" class="btn btn-warning mb-2 btn-sm">filtrer</button>
+                        </div>
+                    </form>                    
+                </th>
+                </th>
+                <th class="text-center align-top" scope="col">
+                    formations par categorie<br />
+                    <a href="{{ path('admin.categories.sort', {champ:'nombre', ordre:'ASC'}) }}" class="btn btn-warning btn-sm active" role="button" aria-pressed="true"><</a>
+                    <a href="{{ path('admin.categories.sort', {champ:'nombre', ordre:'DESC'}) }}" class="btn btn-warning btn-sm active" role="button" aria-pressed="true">></a>
+                </th>
+                <th class="text-center align-top" scope="col">
+                    &nbsp;
+                </th>
+                <th class="text-center align-top" scope="col">
+                    &nbsp;
+                </th>				
+            </tr>
+        </thead>
+        <tbody>
+            <!-- boucle sur les playlists -->
+            {% if categories|length > 0 %}
+                {% for k in 0..categories|length-1 %}
+                    <tr class="align-middle">
+                        <td>
+                            <h5 class="text-warning">
+                                {{ categories[k].name }}
+                            </h5>
+                        </td>
+                        <td>
+                            <h5 class="text-center">
+                                {{ categories[k].formations|length}} {{ (categories[k].formations|length) > 1 ? 'formations' : 'formation' }}
+                            </h5>
+                        </td>            					
+                        <td>
+                            <a href="{{ path('admin.categorie.edit', {id:categories[k].id }) }}" class="btn btn-warning">
+                                Modifier
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ path('admin.categorie.suppr', {id:categories[k].id }) }}" 
+                            class="btn btn-danger" 
+                            onclick="return confirm('Etes-vous sûr de vouloir supprimer {{ categories[k].name }} ?')">
+                                Supprimer
+                            </a>
+                        </td> 					
+                    </tr>
+                {% endfor %}	
+            {% endif %}
+        </tbody>
+    </table>
+{% endblock %}

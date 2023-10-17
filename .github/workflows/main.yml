@@ -1,0 +1,18 @@
+on: [push]
+name: Deploy website on push
+jobs:
+  web-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code                  # Checkout the latest code
+        uses: actions/checkout@v2
+
+      - name: 📂 SFTP uploader                       # Upload to SFTP 
+        uses: wangyucode/sftp-upload-action@v2.0.2
+        with:
+          host: 85.215.34.117                 # Recommended to put the credentials in github secrets.
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # forceUpload: true 
+          localDir: '.'                              # Required, Absolute or relative to cwd.
+          remoteDir: '/var/www/html/MediaTek86/'

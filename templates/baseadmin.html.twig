@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{% endblock %}
+{% block stylesheets %}{% endblock %}
+{% block top %}
+    <div class="container">
+    
+        <div class="text-end">
+            <a href="{{ path('logout') }}" class="link-dark">se déconnecter ➜</a>
+        </div>
+        <!-- titre -->
+        <div class="row">
+            <div class="col-6 text-left">
+                <img src="{{ app.request.getBasePath()~'/adminbanniere.jpg' }}" alt="img banniere" >
+            </div>
+            <div class="col-6 d-flex align-items-center">
+                <h2 class=""><strong>🚧 Back office 🚧</strong></h2>
+            </div>
+        </div>
+        <!-- menu -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('admin.formations')}}">Formations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('admin.playlists')}}">Playlists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('admin.categories')}}">Catégories</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+{% endblock %}
+{% block body %}{% endblock %}
+{% block footer %}
+    <div class="container text-center">
+        <footer>
+            <hr>
+            <p><small><i>
+                Consultez nos <a class="link-secondary" href="{{ path('cgu') }}">Conditions Générales d'Utilisation</a>
+            </i></small></p>
+            
+        </footer>
+    </div>
+{% endblock %}
+{% block javascripts %}{% endblock %}
