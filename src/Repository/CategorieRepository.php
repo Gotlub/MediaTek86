@@ -63,7 +63,6 @@ class CategorieRepository extends ServiceEntityRepository
     public function findAllOrderByName($ordre): array{
         return $this->createQueryBuilder('c')
                 ->leftjoin('c.formations', 'f')
-                ->groupBy('f.id')
                 ->orderBy('c.name', $ordre)
                 ->getQuery()
                 ->getResult();
