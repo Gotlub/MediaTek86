@@ -15,4 +15,4 @@ jobs:
             local_path: './*'
             remote_path: '/var/www/html/MediaTek86/'
             sftp_only: true
-            password: ${{ secrets.FTP_PASSWORD }}
+            password: ${{ secrets.FTP_PASSWORD }} 
