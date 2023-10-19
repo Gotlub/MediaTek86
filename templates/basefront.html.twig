@@ -4,6 +4,11 @@
 {% block stylesheets %}{% endblock %}
 {% block top %}
     <div class="container">
+        {% if is_granted("ROLE_ADMIN") %}
+            <div class="text-end">
+                <a href="{{ path('logout') }}" class="link-dark">se déconnecter ➜</a>
+            </div>
+        {% endif %}
         <!-- titre -->
         <div class="text-left">
             <img src="{{ app.request.getBasePath()~'/banniere.jpg' }}" alt="img banniere" >

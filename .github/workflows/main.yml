@@ -1,17 +1,18 @@
-on: push
+on: [push]
 name: Deploy website on push
 jobs:
   web-deploy:
-    name: Deploy
-    run-on: debian-11
+    runs-on: ubuntu-latest
     steps:
-    - name: Get latest code
-      uses: actions/checkout@v2
-      
-    - name: Sync files
-    uses: SamKirkland/FTP-Deploy-Action@4.3.0
-    with:
-      server: ftp://85.215.34.117
-      server-dir: /var/www/html/MediaTek86
-      username: testowyftp
-      password: ${{ secrets.ftp_password }}
+        - name: Checkout
+          uses: actions/checkout@v2
+        - name: Deploy file
+          uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+          with:
+            username: ${{ secrets.FTP_USER }}
+            server: 85.215.34.117
+            port: 22
+            local_path: './*'
+            remote_path: '/var/www/html/MediaTek86/'
+            sftp_only: true
+            password: ${{ secrets.FTP_PASSWORD }} 
