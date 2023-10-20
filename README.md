@@ -1,6 +1,10 @@
 # Mediatekformation
 
 ### ⚠️Le code récent et la procédure pour installer l'application se situent dans la branche "prod" ⚠️
+
+### [Le projet](https://www.mediatekformation.site/) 
+### [Présentation du projet](https://r4ndomfriday.github.io/PortFolio/pages/mediatekFormation.html)  
+
 ## Présentation
 Ce site, développé avec Symfony 5.4, permet d'accéder aux vidéos d'auto-formation proposées par une chaîne de médiathèques et qui sont aussi accessibles sur YouTube.  
 La a partie front office contient les fonctionnalités globales suivantes :  
