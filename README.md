@@ -21,7 +21,7 @@ Page des playlists du back-office, avec la possibilité de filtrer comme dans la
 ![img4](https://github.com/r4ndomfriday/PortFolio/blob/87964cffd8baa685c5d3902bd5b8143a0dcbcaff/ressources/readme/playlist.png?raw=true)
 Dans ce formulaire, seul le nom est obligatoire. Si "Playlist : .. " est rattaché au nom d'une formation, cela signifie que la formation est déjà associée à une playlist. Une formation ne peut être associée qu'à une seule playlist. 
 ### Page 5 : les catégories
-![img5](https://github.com/r4ndomfriday/PortFolio/blob/87964cffd8baa685c5d3902bd5b8143a0dcbcaff/ressources/readme/categorie.png?raw=true)
+![img5](https://github.com/r4ndomfriday/PortFolio/blob/87964cffd8baa685c5d3902bd5b8143a0dcbcaff/ressources/readme/categories.png?raw=true)
 Liste des catégories avec possibilité de trier et de filtrer. Vous pouvez ajouter, modifier ou supprimer une catégorie.
 ### Page 6 : le formulaire des catégories
 ![img6](https://github.com/r4ndomfriday/PortFolio/blob/87964cffd8baa685c5d3902bd5b8143a0dcbcaff/ressources/readme/categorie.png?raw=true)
