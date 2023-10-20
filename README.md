@@ -2,8 +2,30 @@
 
 Mediatek Formation est un catalogue de formations sur la programmation 
 
-### [Le projet](https://www.mediatekformation.site/) 
-### [Présentation du projet](https://r4ndomfriday.github.io/PortFolio/pages/mediatekFormation.html)  
+### [Le site](https://www.mediatekformation.site/) 
+### [Présentation du projet](https://r4ndomfriday.github.io/PortFolio/pages/mediatekFormation.html) 
+### [Le projet de départ](https://github.com/CNED-SLAM/mediatekformation) 
+  
+## Les pages du back-office 
+
+### Page 1 : les formations
+![img1](https://github.com/r4ndomfriday/PortFolio/blob/87964cffd8baa685c5d3902bd5b8143a0dcbcaff/ressources/readme/formationsAdmin.png?raw=true)
+Page d'accueil du back-office, avec la possibilité de filtrer comme dans la partie front. Trois boutons ont été ajoutés. Les boutons "Modifier" et "Ajouter" permettent d'accéder au formulaire.
+### Page 2 : le formulaire des formations
+![img2](https://github.com/r4ndomfriday/PortFolio/blob/87964cffd8baa685c5d3902bd5b8143a0dcbcaff/ressources/readme/formationAdmin.png?raw=true)
+Dans ce formulaire, seul le titre est obligatoire. Une formation peut être rattachée à plusieurs catégories, à une seule playlist.
+### Page 3 : les playlists
+![img3](https://github.com/r4ndomfriday/PortFolio/blob/87964cffd8baa685c5d3902bd5b8143a0dcbcaff/ressources/readme/playlists.png?raw=true)  
+Page des playlists du back-office, avec la possibilité de filtrer comme dans la partie front. Trois boutons ont été ajoutés. Les boutons "Modifier" et "Ajouter" permettent d'accéder au formulaire.
+### Page 4 : le formulaire des playlists
+![img4](https://github.com/r4ndomfriday/PortFolio/blob/87964cffd8baa685c5d3902bd5b8143a0dcbcaff/ressources/readme/playlist.png?raw=true)
+Dans ce formulaire, seul le nom est obligatoire. Si "Playlist : .. " est rattaché au nom d'une formation, cela signifie que la formation est déjà associée à une playlist. Une formation ne peut être associée qu'à une seule playlist. 
+### Page 5 : les catégories
+![img5](https://github.com/r4ndomfriday/PortFolio/blob/87964cffd8baa685c5d3902bd5b8143a0dcbcaff/ressources/readme/categorie.png?raw=true)
+Liste des catégories avec possibilité de trier et de filtrer. Vous pouvez ajouter, modifier ou supprimer une catégorie.
+### Page 6 : le formulaire des catégories
+![img6](https://github.com/r4ndomfriday/PortFolio/blob/87964cffd8baa685c5d3902bd5b8143a0dcbcaff/ressources/readme/categorie.png?raw=true)
+Dans ce formulaire, seul le nom est obligatoire. Une Catégorie peu être rattaché a plusieurs formations et inversement.
 ## Installation en local :
 
 installer  [Symfony CLI](https://symfony.com/download).  
@@ -69,7 +91,7 @@ Ne pas enregistrer les cookies
 Pour que la demande de déconnexion se fasse correctement, mettre les cookies à “Disabled” (Authentication > Flows > Browser > Cookie)
 
 
-### Importer la base de donnees
+### Importer la base de données
 importer mediatekformation.sql qui ce trouve a la racine du projet dans un SGBD Mysql/Mariadb.  
 
 
