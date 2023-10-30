@@ -17,6 +17,8 @@ class AdminFormationController extends AbstractController
 
     const PAGE_FORMATION = "pages/admin/formation.html.twig";
 
+    const PAGE_FORMATION_VU = "pages/admin/formationVu.html.twig";
+
     /**
      *
      * @var FormationRepository
@@ -79,6 +81,18 @@ class AdminFormationController extends AbstractController
             'categories' => $categories,
             'valeur' => $valeur,
             'table' => $table
+        ]);
+    }
+
+    /**
+     * @Route("/admin/formations/formation/{id}", name="admin.showone")
+     * @param type $id
+     * @return Response
+     */
+    public function showOne($id): Response{
+        $formation = $this->formationRepository->find($id);
+        return $this->render(self::PAGE_FORMATION_VU, [
+            'formation' => $formation
         ]);
     }
 
