@@ -52,6 +52,22 @@ class CategorieRepository extends ServiceEntityRepository
                 ->getQuery()
                 ->getResult();
     }
+    
+    /**
+     * Retourne la liste des catégories des formations d'une playlist
+     * @param type $idPlaylist
+     * @return array
+     */
+    public function findAllForOnePlaylist($idPlaylist): array{
+        return $this->createQueryBuilder('c')
+                ->join('c.formations', 'f')
+                ->join('f.playlist', 'p')
+                ->where('p.id=:id')
+                ->setParameter('id', $idPlaylist)
+                ->orderBy('c.name', 'ASC')   
+                ->getQuery()
+                ->getResult();        
+    }    
 
     /**
      * Enregistrements dont un champ contient une valeur
