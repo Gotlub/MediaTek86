@@ -16,8 +16,18 @@
                 {{ form_row(formFormation.description) }}
                 <br>
                 {{ form_row(formFormation.playlist, {'attr': {'size': 15}}) }}
+                <h5>⚠️ Une formation ne peut être rattaché qu'a une playlist⚠️</h5>
                 <br>
-                {{ form_row(formFormation.categories) }} 
+                {{ form_row(formFormation.categories) }}
+                <ul>
+                    <li>
+                        Ctrl+clic : pour sélectionner plusieurs éléments un à un ou en désélectionner un.
+
+                    </li>
+                    <li>
+                        Shift+clic : pour sélectionner tous les éléments compris entre le premier et le second clic.
+                    </li>
+                </ul>
             </div>
         </div>
     {{ form_end(formFormation) }}

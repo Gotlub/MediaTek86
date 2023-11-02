@@ -6,6 +6,15 @@
             <br>
             <br />
             <br />
+            <ul>
+                <li>
+                    Ctrl+clic : pour sélectionner plusieurs éléments un à un ou en désélectionner un.
+
+                </li>
+                <li>
+                    Shift+clic : pour sélectionner tous les éléments compris entre le premier et le second clic.
+                </li>
+            </ul>
             {{ form_row(formCategorie.submit, {'attr': {'onclick': 'return confirm(Etes-vous sûr?")'}}) }}
         </div>
             {{ form_end(formCategorie) }}
